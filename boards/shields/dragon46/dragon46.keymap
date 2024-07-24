@@ -1,0 +1,421 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+ /* COMPIL:
+west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view" 
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include "keymap_french.h"
+
+#define WIN_DFT     0
+#define WIN_SFT     1
+#define WIN_1DK     2
+#define WIN_1DKS    3
+#define WIN_CODE    4
+
+#define OSX_DFT     5
+#define OSX_SFT     6
+#define OSX_1DK     7
+#define OSX_1DKS    8
+#define OSX_CODE    9
+
+#define ALL_NAV     10
+#define ALL_FUNC    11
+#define ALL_SCROLL  12
+#define ALL_BLUETOOTH 13
+
+#define K0 KP_N0
+#define K1 KP_N1
+#define K2 KP_N2
+#define K3 KP_N3
+#define K4 KP_N4
+#define K5 KP_N5
+#define K6 KP_N6
+#define K7 KP_N7
+#define K8 KP_N8
+#define K9 KP_N9 
+
+&sl {
+    release-after-ms = <1000>;
+};
+
+&soft_off {
+    hold-time-ms = <500>; // Only turn off it the key is held for 5 seconds or longer.
+};
+
+/ {
+
+    behaviors {
+        hw_soft_off: hw_soft_off {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            hold-time-ms = <1000>;
+        };
+    };
+
+    macros {
+        lm: lm {
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_press &mo MACRO_PLACEHOLDER>
+                , <&macro_param_2to1>
+                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_param_2to1>
+                , <&macro_release &kp MACRO_PLACEHOLDER>
+                , <&macro_param_1to1>
+                , <&macro_release &mo MACRO_PLACEHOLDER>
+                ;
+        };
+
+        UnS: UnS {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = 
+                <&macro_release &kp LSHFT>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_press &kp LSHFT>;
+        };
+
+        circ: circ {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = 
+                <&macro_tap &kp FR_CIRC>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+        tild: tild {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = 
+                <&macro_tap &kp LA(FR_N)>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+        diae: diae {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_tap &kp LS(FR_CIRC)>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+        caps: caps {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <40>; tap-ms = <40>;
+            bindings = 
+                <&macro_tap &kp CAPS>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_tap &kp CAPS>;
+        };
+
+        x_acut: x_acut {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_tap &kp LS(LA(N1))>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+        x_agrv: x_agrv {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_tap &kp OSX_GRV>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+        ax: ax {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_press &kp LALT>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_release &kp LALT>;
+        };
+
+        a1xx: a1xx {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_press &kp LALT>
+                ,<&macro_tap &kp KP_N1>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_param_2to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_release &kp LALT>;
+        };
+
+        a2xx: a2xx {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_press &kp LALT>
+                ,<&macro_tap &kp KP_N2>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_param_2to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_release &kp LALT>;
+        };
+
+        a01xx: a01xx {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <10>; tap-ms = <10>;
+            bindings = 
+                <&macro_press &kp LALT>
+                ,<&macro_tap &kp KP_N0>
+                ,<&macro_tap &kp KP_N1>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_param_2to1>,<&macro_tap &kp MACRO_PLACEHOLDER>
+                ,<&macro_release &kp LALT>;
+        };
+
+        insec: insec {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_release &kp LSHFT>
+                ,<&macro_press &kp LALT>
+                ,<&macro_tap &kp KP_N2>,<&macro_tap &kp KP_N5>,<&macro_tap &kp KP_N5>
+                ,<&macro_release &kp LALT>
+                ,<&macro_press &kp LSHFT>;
+        };
+
+        bt_prof0: bt_prof0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &bt BT_SEL 0>
+                ,<&macro_press &to WIN_DFT>;
+        };
+
+        bt_prof1: bt_prof1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &bt BT_SEL 1>
+                ,<&macro_press &to OSX_DFT>;
+        };
+
+        
+    };
+    
+    keymap {
+        compatible = "zmk,keymap";
+
+// ****************************** WINDOWS ****************************************
+       win_default_layer {
+            bindings = <
+                                                        /*&none*/                                                 &to OSX_DFT  &mo ALL_BLUETOOTH
+&kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl WIN_1DK  &kp FR_Y     &kp FR_AT
+&kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
+&mt LALT FR_QUOT &kp FR_Z      &kp FR_X    &kp FR_MINS  &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
+                                           &kp LGUI &kp RCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &none    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "PC";
+        };
+
+        win_shift_layer {
+            bindings = <
+                                                 /*&none*/                                           &none          &none
+&trans      &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &UnS FR_EXLM &trans      &UnS FR_DLR
+&none       &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &trans       &trans      &none
+&kp LALT    &trans       &trans     &UnS FR_QUES &trans      &trans      &trans          &trans      &UnS FR_COLN   &trans       &trans     &UnS FR_SCLN &trans      &UnS FR_BSLS
+                                    &trans       &trans      &trans      &trans          &kp DEL     &insec         &trans       &trans    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "Shift";
+        };
+
+        win_1dk_layer {
+            bindings = <
+                                                        /*&none*/                                         &none           &none
+/* +---------+------------+-----------+-------------+-------------+-----------+                          +-------------+------------+-----------+-----------+-------------+-----------+*/
+/* |  alt+7=•|      â     |     ç     |alt+0156=œ   |      ô      |     °     |                          |             |    µ       |      _    |   ¨(dead) |       û     |           |*/
+    &ax K7    &circ FR_A   &kp FR_CCED &a01xx K5 K6  &circ FR_O    &kp FR_DEG                             &none         &kp FR_MICR  &kp FR_UNDS &kp FR_DIAE &circ FR_U    &none
+/* +---------+------------+-----------+-------------+-------------+-----------+                          +-------------+------------+-----------+-----------+-------------+-----------+*/
+/*           |    à       |  é        |  è          |    ê        |      ñ                               |alt+174 = «  | alt+175 = »|      î    |      ï    |    ù        |    §      |*/
+    &none     &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
+/* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
+/*           |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+151=—  |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
+    &none     &a1xx K4 K5  &none       &a01xx K7 K3  &a01xx K5 K0  &a1xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
+/* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
+/*                                    |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
+                                       &none         &none         &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none 
+/*                                    +-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+                                      */
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "1dk";
+        };
+
+        win_1dks_layer {
+            bindings = <
+                                                                                                                &none        &none
+// +---------+--------------+-----------+-------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
+// |         |      Â       | alt+128=Ç | alt+0140=Œ  |      Ô       |              |                          |            |            |              |              |       Û        |           |
+    &none     &circ LS(FR_A) &a1xx K2 K8 &a01xx K4 K0  &circ LS(FR_O) &none                                     &none        &none        &none          &none          &circ LS(FR_U)   &none 
+// +---------+--------------+-----------+-------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
+// |         |alt+183 = À   | alt+144=É | alt+212 = È |      Ê       |     Ñ        |                          |            |            |      Î       |      Ï       |       Û        |           |
+    &none     &a1xx K8 K3    &a1xx K4 K4 &a2xx K1 K2   &circ LS(FR_E) &tild LS(FR_N)                            &none        &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
+// +---------+--------------+-----------+-------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
+// |         |              |           |             |              |              |          |    |          |            |            |              |              | alt+0174 = (r) |           |
+    &none     &none          &none       &none         &none          &none          &none           &none      &none        &none        &none          &none          &a01xx K7 K4     &none 
+// +---------+--------------+-----------+-------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
+//                                      |             |             |               |          |    |          |            |            |              |                                            
+                                         &none            &none          &none       &none           &none      &none        &none         &none   
+//                                      +-------------+-------------+---------------+----------+    +----------+------------+------------+--------------+                                                                                      
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "1dk S";
+        };
+
+        win_code_layer {
+            bindings = <
+                                                /*&none*/                                                  &none       &none
+&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp FR_EQL  &kp FR_DLR
+&kp FR_DQUO   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp FR_PLUS &kp FR_MINS
+&tild SPACE   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp FR_ASTR &kp FR_SLSH
+                                            &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
+            >;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+            display-name = "Code";
+        };
+
+// ****************************** APPLE ****************************************
+        osx_default_layer {
+            bindings = <
+                                                        /*&none*/                                                 &to WIN_DFT  &mo ALL_BLUETOOTH
+&kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl OSX_1DK  &kp FR_Y     &kp OSX_AT
+&kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
+&mt LALT FR_QUOT &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
+                                           &kp LGUI &kp RCTRL &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &none    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "macOS";
+        };
+
+        osx_shift_layer {
+            bindings = <
+                                                 /*&none*/                                           &none          &none
+&trans      &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &UnS N8      &trans      &UnS FR_DLR
+&none       &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &trans       &trans      &none
+&kp LALT    &trans       &trans     &UnS FR_QUES &trans      &trans      &trans          &trans      &UnS FR_COLN   &trans       &trans     &UnS FR_SCLN &trans      &UnS LS(LA(FR_SLSH))
+                                    &trans       &trans      &trans      &trans          &kp DEL     &UnS LA(SPACE) &trans       &trans    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "Shift";
+        };
+
+        osx_1dk_layer {
+            bindings = <
+                                                        /*&none*/                                               &none           &none
+&kp RA(NUBS) &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
+&none        &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &tild FR_N                                &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
+&none        &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none      &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
+                                      &none        &none              &sl OSX_1DKS   &none           &none      &kp OSX_QUOTFR  &none               &none 
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "1dk";
+        };
+
+        osx_1dks_layer {
+            bindings = <
+                                                /*&none*/                                                        &none       &none
+&none       &circ LS(FR_A) &kp LA(N9)    &kp LS(LA(FR_O)) &circ LS(FR_O) &none                                   &none       &none        &none          &none          &circ LS(FR_U)   &none 
+&none       &caps N0       &x_acut LS(E) &x_agrv LS(E)    &circ LS(FR_E) &tild LS(FR_N)                          &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
+&none       &none          &none         &none            &none          &none       &none           &none       &none       &none        &none          &none          &kp LA(FR_R)     &none 
+                                         &none            &none          &none       &none           &none       &none       &none        &none     
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "1dk S";
+        };
+
+        osx_code_layer {
+            bindings = <
+                                                /*&none*/                                                  &none       &none
+&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                         &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp OSX_EQL  &kp FR_DLR
+&kp FR_DQUO   &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp OSX_PLUS &kp OSX_MINS
+&tild SPACE   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp OSX_ASTR &kp FR_SLSH
+                                            &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
+            >;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+            display-name = "Code";
+        };
+
+// ****************************** COMMON ****************************************
+        nav_layer {
+            bindings = <
+                                                /*&none*/   &none     &none
+&none    &none &none &none  &none  &none                       &none    &none    &none     &none     &none     &none
+&none    &none &none &none  &none  &none                       &kp HOME &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp END
+&kp LALT &none &none &none  &none  &none     &none       &none &none    &none    &kp PG_DN &kp PG_UP &none     &none 
+                     &trans &trans &kp LSHFT &none       &none &none    &none    &none    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "nav";
+        };
+
+        func_layer {
+            bindings = <
+                                                /*&none*/                                           &none  &none
+&none    &none &none &none  &none  &none                            &kp C_BRI_UP  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&none    &none &none &none  &none  &none                            &kp C_BRI_DN  &kp F4  &kp F5  &kp F6  &none    &kp F12
+&kp LALT &none &none &none  &none  &none     &none      &kp C_MUTE  &none         &kp F1  &kp F2  &kp F3  &none    &none
+                     &trans &trans &kp LSHFT &none      &none       &none  &none  &none     
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            display-name = "func";
+        };
+
+        scroll_layer {
+            bindings = <
+                                                /*&none*/                                               &none       &none
+&trans      &trans       &trans     &trans      &trans      &trans                                  &trans      &trans       &trans     &trans      &trans      &trans
+&trans      &trans       &trans     &trans      &trans      &trans                                  &trans      &trans       &trans     &trans      &trans      &trans
+&trans      &trans       &trans     &trans      &trans      &trans      &trans          &trans      &trans      &trans       &trans     &trans      &trans      &trans
+                                    &trans      &trans      &kp LSHFT   &trans          &trans      &trans      &trans       &trans    
+            >;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            display-name = "scroll";
+        };
+
+        bluetooth_layer {
+            bindings = <
+                                                               &bt BT_CLR_ALL &trans
+&none    &none &none &none  &none  &bt BT_CLR                  &bt_prof0     &bt_prof1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+&none    &none &none &none  &none  &out OUT_BLE                &none         &none        &none         &none         &none         &none
+&none    &none &none &none  &none  &out OUT_USB  &none   &none &none         &none        &none         &none         &none         &none 
+                     &none &none    &none    &none       &none &none    &none    &none    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "bluetooth";
+        };
+
+
+    };
+};

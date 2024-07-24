@@ -1,0 +1,6 @@
+if SHIELD_MY_BOARD
+
+config SHIELD_DRAGON46
+    default "dragon46"
+
+endif

@@ -1,0 +1,10 @@
+file_format: "1"
+id: dragon46
+name: dragon46
+type: shield
+url: https://github.com/parinacota/papillon53/
+requires: [pro_micro]
+features:
+  - keys
+  - encoder
+  - display
