@@ -226,7 +226,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 &kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl WIN_1DK  &kp FR_Y     &kp BSPC
 &kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp RET
 &mt LALT FR_QUOT &kp FR_Z      &kp FR_X    &kp FR_MINS  &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
-                                           &kp LGUI     &kp RCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE  &mo ALL_NAV    &kp SPACE    &none        &none       
+                                           &kp LGUI     &kp LCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE  &mo ALL_NAV    &kp SPACE    &none        &none       
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "PC";
@@ -252,10 +252,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
     &ax K7    &circ FR_A   &kp FR_CCED &a01xx K5 K6  &circ FR_O    &kp FR_DEG                             &none         &kp FR_MICR  &kp FR_UNDS &kp FR_DIAE &circ FR_U    &none
 /* +---------+------------+-----------+-------------+-------------+-----------+                          +-------------+------------+-----------+-----------+-------------+-----------+*/
 /*           |    à       |  é        |  è          |    ê        |      ñ                               |alt+174 = «  | alt+175 = »|      î    |      ï    |    ù        |    §      |*/
-    &FR_AT    &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
+    &kp FR_AT &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*           |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+151=—  |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
-    &none     &a1xx K4 K5  &FR_EURO    &a01xx K7 K3  &a01xx K5 K0  &a1xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
+    &none     &a1xx K4 K5  &kp FR_EURO &a01xx K7 K3  &a01xx K5 K0  &a1xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                                    |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
                                        &none         &none         &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none        
