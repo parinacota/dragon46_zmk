@@ -48,7 +48,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 };
 
 &soft_off {
-    hold-time-ms = <1000>; // Only turn off it the key is held for 0.5 seconds or longer.
+    hold-time-ms = <1500>; // Only turn off it the key is held for 0.5 seconds or longer.
 };
 
 / {
@@ -223,10 +223,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_default_layer {
             bindings = <
                                                         /*&soft_off*/                                                 &to OSX_DFT  &mo ALL_BLUETOOTH
-&kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl WIN_1DK  &kp FR_Y     &kp BSPC
-&kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp RET
+&kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl WIN_1DK  &kp FR_Y     &kp FR_AT
+&kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
 &mt LALT FR_QUOT &kp FR_Z      &kp FR_X    &kp FR_MINS  &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
-                                           &kp LGUI     &kp LCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE  &mo ALL_NAV    &kp SPACE    &none        &none       
+                                            &kp LGUI &kp RCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "PC";
@@ -235,10 +235,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_shift_layer {
             bindings = <
                                                 /*&none*/                                                &none          &none
-&trans      &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &UnS FR_EXLM &trans      &kp DEL
-&none       &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &trans       &trans      &trans
+&trans      &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &UnS FR_EXLM &trans      &UnS FR_DLR
+&none       &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &trans       &trans      &none
 &kp LALT    &trans       &trans     &UnS FR_QUES &trans      &trans      &trans          &trans      &UnS FR_COLN   &trans       &trans     &UnS FR_SCLN &trans      &UnS FR_BSLS
-                                    &trans       &trans      &trans      &trans          &none       &insec         &trans       &none      
+                                    &trans       &trans      &trans      &trans          &kp DEL     &insec         &trans       &trans    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "Shift";
@@ -252,13 +252,13 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
     &ax K7    &circ FR_A   &kp FR_CCED &a01xx K5 K6  &circ FR_O    &kp FR_DEG                             &none         &kp FR_MICR  &kp FR_UNDS &kp FR_DIAE &circ FR_U    &none
 /* +---------+------------+-----------+-------------+-------------+-----------+                          +-------------+------------+-----------+-----------+-------------+-----------+*/
 /*           |    à       |  é        |  è          |    ê        |      ñ                               |alt+174 = «  | alt+175 = »|      î    |      ï    |    ù        |    §      |*/
-    &kp FR_AT &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
+    &none     &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*           |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+151=—  |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
-    &none     &a1xx K4 K5  &kp FR_EURO &a01xx K7 K3  &a01xx K5 K0  &a1xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
+    &none     &a1xx K4 K5  &none       &a01xx K7 K3  &a01xx K5 K0  &a1xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                                    |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
-                                       &none         &none         &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none        
+                                       &none         &none         &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none 
 /*                                    +-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+                                      */
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -289,10 +289,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_code_layer {
             bindings = <
                                                         /*&none*/                                         &none       &none
-&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp FR_DLR  &kp FR_7  &kp FR_8  &kp FR_9   &kp FR_EQL  &trans
+&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp FR_EQL  &kp FR_DLR
 &kp FR_DQUO   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp FR_PLUS &kp FR_MINS
 &tild SPACE   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp FR_ASTR &kp FR_SLSH
-                                        &trans      &trans         &trans       &trans      &trans    &trans      &kp FR_0  &trans    
+                                            &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             display-name = "Code";
@@ -301,7 +301,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 // ****************************** APPLE ****************************************
         osx_default_layer {
             bindings = <
-                                                        /*&soft_off*/                                             &to WIN_DFT  &mo ALL_BLUETOOTH
+                                                        /*&soft_off*/                                                 &to WIN_DFT  &mo ALL_BLUETOOTH
 &kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl OSX_1DK  &kp FR_Y     &kp OSX_AT
 &kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
 &mt LALT FR_QUOT &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
@@ -366,7 +366,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 &soft_off &none &none &none  &none  &none                       &none    &none    &none     &none     &none     &none
 &none     &none &none &none  &none  &none                       &kp HOME &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp END
 &kp LALT  &none &none &none  &none  &none     &none       &none &none    &none    &kp PG_DN &kp PG_UP &none     &none 
-                     &trans &trans &kp LSHFT &none        &none &none    &none    &none    
+                     &trans &trans &kp LSHFT &none       &none &none    &none    &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "nav";
@@ -399,10 +399,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         bluetooth_layer {
             bindings = <
                             /*&none*/                              &bt BT_CLR_ALL &trans
-&bt BT_CLR &none &none &none  &none  &none                         &bt_prof0     &bt_prof1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-&none      &none &none &none  &none  &out OUT_BLE                  &none         &none       &none         &none         &none         &none
-&none      &none &none &none  &none  &out OUT_USB &none      &none &none         &none       &none         &none         &none         &none 
-                       &none  &none  &none        &none      &none &none         &none       &none    
+&none    &none &none &none  &none  &bt BT_CLR                  &bt_prof0     &bt_prof1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+&none    &none &none &none  &none  &out OUT_BLE                &none         &none        &none         &none         &none         &none
+&none    &none &none &none  &none  &out OUT_USB  &none   &none &none         &none        &none         &none         &none         &none 
+                     &none &none    &none    &none       &none &none    &none    &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "bluetooth";
