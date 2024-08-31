@@ -97,6 +97,16 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
             wait-ms = <20>;
             tap-ms = <20>;
             bindings = 
+                <&macro_tap &kp FR_TILD>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+        
+        x_tild: x_tild {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = 
                 <&macro_tap &kp LA(FR_N)>
                 ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
         };
@@ -327,7 +337,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
             bindings = <
                                                     /*&none*/                                                       &none           &none
 &kp RA(NUBS) &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
-&none        &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &tild FR_N                                &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
+&none        &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                                &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
 &none        &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none      &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
                                       &none        &none              &sl OSX_1DKS   &none           &none      &kp OSX_QUOTFR  &none               &none 
             >;
@@ -339,7 +349,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
             bindings = <
                                                 /*&none*/                                                            &none       &none
 &none       &circ LS(FR_A) &kp LA(N9)    &kp LS(LA(FR_O)) &circ LS(FR_O) &none                                   &none       &none        &none          &none          &circ LS(FR_U)   &none 
-&none       &caps N0       &x_acut LS(E) &x_agrv LS(E)    &circ LS(FR_E) &tild LS(FR_N)                          &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
+&none       &caps N0       &x_acut LS(E) &x_agrv LS(E)    &circ LS(FR_E) &x_tild LS(FR_N)                          &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
 &none       &none          &none         &none            &none          &none       &none           &none       &none       &none        &none          &none          &kp LA(FR_R)     &none 
                                          &none            &none          &none       &none           &none       &none       &none        &none     
             >;
@@ -352,7 +362,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&none*/                                              &none       &none
 &x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                         &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp OSX_EQL  &kp FR_DLR
 &kp FR_DQUO   &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp OSX_PLUS &kp OSX_MINS
-&tild SPACE   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp OSX_ASTR &kp FR_SLSH
+&x_tild SPACE   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp OSX_ASTR &kp FR_SLSH
                                             &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
