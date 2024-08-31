@@ -100,7 +100,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                 <&macro_tap &kp FR_TILD>
                 ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
         };
-        
+
         x_tild: x_tild {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -145,6 +145,15 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
             wait-ms = <20>; tap-ms = <20>;
             bindings = 
                 <&macro_tap &kp OSX_GRV>
+                ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
+        };
+
+        agrv: agrv {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <20>; tap-ms = <20>;
+            bindings = 
+                <&macro_tap &kp FR_GRV>
                 ,<&macro_param_1to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
         };
 
@@ -278,19 +287,19 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_1dks_layer {
             bindings = <
                                                         /*&none*/                                                   &none        &none
-// +---------+--------------+-----------+-------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
-// |         |      Â       | alt+128=Ç | alt+0140=Œ  |      Ô       |              |                          |            |            |              |              |       Û        |           |
+// +---------+--------------+-----------+--------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
+// |         |      Â       | alt+128=Ç | alt+0140=Œ   |      Ô       |              |                          |            |            |              |              |       Û        |           |
     &none     &circ LS(FR_A) &a1xx K2 K8 &a01xx K4 K0  &circ LS(FR_O) &none                                     &none        &none        &none          &none          &circ LS(FR_U)   &none 
-// +---------+--------------+-----------+-------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
-// |         |alt+183 = À   | alt+144=É | alt+212 = È |      Ê       |     Ñ        |                          |            |            |      Î       |      Ï       |       Û        |           |
-    &none     &a1xx K8 K3    &a1xx K4 K4 &a2xx K1 K2   &circ LS(FR_E) &tild LS(FR_N)                            &none        &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
-// +---------+--------------+-----------+-------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
-// |         |              |           |             |              |              |          |    |          |            |            |              |              | alt+0174 = (r) |           |
-    &none     &none          &none       &none         &none          &none          &none           &none      &none        &none        &none          &none          &a01xx K7 K4     &none 
-// +---------+--------------+-----------+-------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
-//                                      |             |             |               |          |    |          |            |            |              |                                            
-                                         &none            &none          &none       &none           &none      &none        &none         &none   
-//                                      +-------------+-------------+---------------+----------+    +----------+------------+------------+--------------+                                                                                      
+// +---------+--------------+-----------+--------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
+// |         |alt+183 = À   | alt+144=É | alt+212 = È  |      Ê       |     Ñ        |                          |            |            |      Î       |      Ï       |       Û        |           |
+    &none     &agrv LS(FR_A) &a1xx K4 K4 &agrv LS(FR_E) &circ LS(FR_E) &tild LS(FR_N)                            &none        &none        &circ LS(FR_I) &diae LS(FR_I) &agrv LS(FR_U)   &none 
+// +---------+--------------+-----------+--------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
+// |         |              |           |              |              |              |          |    |          |            |            |              |              | alt+0174 = (r) |           |
+    &none     &none          &none       &none          &none          &none          &none           &none      &none        &none        &none          &none          &a01xx K7 K4     &none 
+// +---------+--------------+-----------+--------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
+//                                      |              |             |               |          |    |          |            |            |              |                                            
+                                         &none            &none          &none       &none            &none      &none        &none        &none   
+//                                      +--------------+-------------+---------------+----------+    +----------+------------+------------+--------------+                                                                                      
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk S";
@@ -362,7 +371,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&none*/                                              &none       &none
 &x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                         &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp OSX_EQL  &kp FR_DLR
 &kp FR_DQUO   &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp OSX_PLUS &kp OSX_MINS
-&x_tild SPACE   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp OSX_ASTR &kp FR_SLSH
+&x_tild SPACE   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3 &kp OSX_ASTR &kp FR_SLSH
                                             &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
