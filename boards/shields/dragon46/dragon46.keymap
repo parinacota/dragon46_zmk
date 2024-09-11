@@ -273,8 +273,8 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 /*           |    à       |  é        |  è          |    ê        |      ñ                               |alt+174 = «  | alt+175 = »|      î    |      ï    |    ù        |    §      |*/
     &none     &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
-/*           |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+151=—  |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
-    &none     &a1xx K4 K5  &none       &a01xx K7 K3  &a01xx K5 K0  &a1xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
+/*           |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+0151=— |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
+    &none     &a1xx K4 K5  &none       &a01xx K7 K3  &a01xx K5 K0 &a01xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                                    |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
                                        &none         &none         &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none 
