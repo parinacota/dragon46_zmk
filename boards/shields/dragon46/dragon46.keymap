@@ -12,7 +12,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-/*#include <dt-bindings/zmk/ext_power.h>*/
+#include <dt-bindings/zmk/ext_power.h>
 #include "keymap_french.h"
 
 #define WIN_DFT         0
