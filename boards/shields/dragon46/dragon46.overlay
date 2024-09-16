@@ -8,7 +8,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan1;
+        zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
     };
 
@@ -25,7 +25,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
         >;
     };
 
-/*
+
     kscan0: kscan_composite {
         compatible = "zmk,kscan-composite";
         rows = <9>;
@@ -42,11 +42,11 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
             row-offset = <8>; // ...and shift it to not overlap
         };
     };
-*/
+
 
     kscan1: kscan_matrix {
         compatible = "zmk,kscan-gpio-matrix";
-        wakeup-source;
+        /* wakeup-source; */
         diode-direction = "col2row";
 
         row-gpios
@@ -70,7 +70,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
             ;
     };
 
-/*
+
     kscan2: kscan {
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
@@ -78,16 +78,16 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
             = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
     };
-*/
 
 
+/*
     keys {
         compatible = "gpio-keys";
         soft_off_key: soft_off_key {
             gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         };
     };
-
+*/
 
     right_encoder: right_encoder {
         compatible = "alps,ec11";
