@@ -116,9 +116,17 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
         };
     };
 
+    
+    wakeup_source: wakeup_source {
+        compatible = "zmk,gpio-key-wakeup-trigger";
+
+        trigger = <&on_off_key>;
+        wakeup-source;
+    };
+
     soft_off_wakers {
         compatible = "zmk,soft-off-wakeup-sources";
-        wakeup-sources = <&soft_off_direct_scan>;
+        wakeup-sources = <&wakeup_source>;
     };
 
 
@@ -129,12 +137,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
         b-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 
-    wakeup_source: wakeup_source {
-        compatible = "zmk,gpio-key-wakeup-trigger";
-
-        trigger = <&on_off_key>;
-        wakeup-source;
-    };
+    
 
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
