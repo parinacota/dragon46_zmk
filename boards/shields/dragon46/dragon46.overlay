@@ -8,7 +8,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
+        zmk,kscan = &kscan1;
         zmk,matrix-transform = &default_transform;
     };
 
@@ -22,11 +22,10 @@ RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)                   RC(1,0) RC(1,1
 RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                   RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)
 RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4) RC(5,5)
                         RC(6,0) RC(6,1) RC(6,2) RC(6,3)   RC(7,0) RC(7,1) RC(7,2) RC(7,3)
-                        RC(8,0)
         >;
     };
 
-
+/*
     kscan0: kscan_composite {
         compatible = "zmk,kscan-composite";
         rows = <9>;
@@ -43,7 +42,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
             row-offset = <8>; // ...and shift it to not overlap
         };
     };
-
+*/
 
     kscan1: kscan_matrix {
         compatible = "zmk,kscan-gpio-matrix";
@@ -71,7 +70,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
             ;
     };
 
-
+/*
     kscan2: kscan {
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
@@ -79,14 +78,47 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
             = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
     };
-
+*/
 
 
     keys {
         compatible = "gpio-keys";
-        soft_off_key: soft_off_key {
+        on_off_key: soft_off_key {
             gpios = <&gpio1 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         };
+    };
+
+    behaviors {
+        hw_soft_off: hw_soft_off {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            hold-time-ms = <1000>;
+        };
+    };
+
+    soft_off_direct_scan: soft_off_direct_scan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-keys = <&on_off_key>;
+        wakeup-source;
+    };
+
+    side_band_behavior_triggers: side_band_behavior_triggers {
+        compatible = "zmk,kscan-sideband-behaviors";
+
+        kscan = <&soft_off_direct_scan>;
+        auto-enable;
+        wakeup-source;
+
+        soft_off {
+            column = <0>;
+            row = <0>;
+            bindings = <&hw_soft_off>;
+        };
+    };
+
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&soft_off_direct_scan>;
     };
 
 
