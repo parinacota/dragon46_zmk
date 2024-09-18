@@ -80,8 +80,6 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
     };
 */
 
-
-
     keys {
         compatible = "gpio-keys";
         on_off_key: soft_off_key {
