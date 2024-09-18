@@ -354,7 +354,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
             bindings = <
                                                 /*&none*/                                                            &none       &none
 &none       &circ LS(FR_A) &kp LA(N9)    &kp LS(LA(FR_O)) &circ LS(FR_O) &none                                   &none       &none        &none          &none          &circ LS(FR_U)   &none 
-&none       &caps N0       &x_acut LS(E) &x_agrv LS(E)    &circ LS(FR_E) &x_tild LS(FR_N)                          &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
+&none       &x_agrv LS(A)  &x_acut LS(E) &x_agrv LS(E)    &circ LS(FR_E) &x_tild LS(FR_N)                        &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
 &none       &none          &none         &none            &none          &none       &none           &none       &none       &none        &none          &none          &kp LA(FR_R)     &none 
                                          &none            &none          &none       &none           &none       &none       &none        &none     
             >;
