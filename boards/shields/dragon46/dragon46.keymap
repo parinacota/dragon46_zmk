@@ -273,7 +273,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
     &none     &a1xx K4 K5  &none       &a01xx K7 K3  &a01xx K5 K0 &a01xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                                    |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
-                                       &none         &none         &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none 
+                                        &none         &none        &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none 
 /*                                    +-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+                                      */
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -294,7 +294,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
     &none     &none          &none       &none          &none          &none          &none           &none      &none        &none        &none          &none          &a01xx K7 K4     &none 
 // +---------+--------------+-----------+--------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
 //                                      |              |             |               |          |    |          |            |            |              |                                            
-                                         &none            &none          &none       &none            &none      &none        &none        &none   
+                                        &none            &none          &none        &none            &none      &none        &none        &none   
 //                                      +--------------+-------------+---------------+----------+    +----------+------------+------------+--------------+                                                                                      
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -317,10 +317,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         osx_default_layer {
             bindings = <
                                                         /*&soft_off*/                                                 &to WIN_DFT  &mo ALL_BLUETOOTH
-&kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl OSX_1DK  &kp FR_Y     &kp OSX_AT
-&kp FR_DQUO      &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
-&mt LALT FR_QUOT &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
-                                           &kp LCTRL &kp LGUI &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &none    
+&kp TAB           &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl OSX_1DK  &kp FR_Y     &kp OSX_AT
+&kp FR_DQUO       &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
+&mt LALT FR_QUOT  &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
+                                            &kp LCTRL &kp LGUI &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "macOS";
@@ -341,10 +341,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         osx_1dk_layer {
             bindings = <
                                                     /*&none*/                                                       &none           &none
-&kp RA(NUBS) &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
-&none        &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                                &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
-&none        &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none      &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
-                                      &none        &none              &sl OSX_1DKS   &none           &none      &kp OSX_QUOTFR  &none               &none 
+&kp RA(NUBS)   &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
+&none          &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                                &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
+&none          &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none      &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
+                                        &none        &none              &sl OSX_1DKS   &none           &none      &kp OSX_QUOTFR  &none               &none 
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk";
@@ -352,11 +352,11 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         osx_1dks_layer {
             bindings = <
-                                                /*&none*/                                                            &none       &none
-&none       &circ LS(FR_A) &kp LA(N9)    &kp LS(LA(FR_O)) &circ LS(FR_O) &none                                   &none       &none        &none          &none          &circ LS(FR_U)   &none 
-&none       &x_agrv LS(A)  &x_acut LS(E) &x_agrv LS(E)    &circ LS(FR_E) &x_tild LS(FR_N)                        &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
-&none       &none          &none         &none            &none          &none       &none           &none       &none       &none        &none          &none          &kp LA(FR_R)     &none 
-                                         &none            &none          &none       &none           &none       &none       &none        &none     
+                                                /*&none*/                                                       &none       &none
+&none    &circ LS(FR_A)   &kp LA(N9)        &kp LS(LA(FR_O)) &circ LS(FR_O) &none                                   &none       &none        &none          &none          &circ LS(FR_U)   &none 
+&none    &x_agrv LS(FR_A) &x_acut LS(FR_E)  &x_agrv LS(FR_E) &circ LS(FR_E) &x_tild LS(FR_N)                        &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
+&none    &none            &none             &none            &none          &none       &none           &none       &none       &none        &none          &none          &kp LA(FR_R)     &none 
+                                            &none            &none          &none       &none           &none       &none       &none        &none     
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk S";
@@ -367,7 +367,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&none*/                                              &none       &none
 &x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                         &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp OSX_EQL  &kp FR_DLR
 &kp FR_DQUO   &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp OSX_PLUS &kp OSX_MINS
-&x_tild SPACE   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3 &kp OSX_ASTR &kp FR_SLSH
+&x_tild SPACE &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3 &kp OSX_ASTR &kp FR_SLSH
                                             &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
@@ -378,10 +378,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         nav_layer {
             bindings = <
                             /*&none*/                              &none     &none
-&soft_off &none &none &none  &none  &none                       &none    &none    &none     &none     &none     &none
-&none     &none &none &none  &none  &none                       &kp HOME &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp END
-&kp LALT  &none &none &none  &none  &none     &none       &none &none    &none    &kp PG_DN &kp PG_UP &none     &none 
-                     &trans &trans &kp LSHFT &none       &none &none    &none    &none    
+&soft_off   &none &none &none  &none  &none                       &none    &none    &none     &none     &none     &none
+&none       &none &none &none  &none  &none                       &kp HOME &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp END
+&kp LALT    &none &none &none  &none  &none     &none       &none &none    &none    &kp PG_DN &kp PG_UP &none     &none 
+                        &trans &trans &kp LSHFT &none       &none &none    &none    &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "nav";
@@ -390,10 +390,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         func_layer {
             bindings = <
                             /*&none*/                                   &none         &none
-&none    &none &none &none  &none  &none                            &kp C_BRI_UP  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&none    &none &none &none  &none  &none                            &kp C_BRI_DN  &kp F4  &kp F5  &kp F6  &none    &kp F12
-&kp LALT &none &none &none  &none  &none     &none      &kp C_MUTE  &none         &kp F1  &kp F2  &kp F3  &none    &none
-                     &trans &trans &kp LSHFT &none      &none       &none  &none  &none     
+&none       &none &none &none  &none  &none                            &kp C_BRI_UP  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&none       &none &none &none  &none  &none                            &kp C_BRI_DN  &kp F4  &kp F5  &kp F6  &none    &kp F12
+&kp LALT    &none &none &none  &none  &none     &none      &kp C_MUTE  &none         &kp F1  &kp F2  &kp F3  &none    &none
+                        &trans &trans &kp LSHFT &none      &none       &none  &none  &none     
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             display-name = "func";
@@ -414,10 +414,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         bluetooth_layer {
             bindings = <
                             /*&none*/                              &bt BT_CLR_ALL &trans
-&none    &none &none &none  &none  &bt BT_CLR                  &bt_prof0     &bt_prof1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-&none    &none &none &none  &none  &out OUT_BLE                &none         &none        &none         &none         &none         &none
-&none    &none &none &none  &none  &out OUT_USB  &none   &none &none         &none        &none         &none         &none         &none 
-                     &none &none    &none    &none       &none &none    &none    &none    
+&none   &none &none &none  &none  &bt BT_CLR                  &bt_prof0     &bt_prof1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+&none   &none &none &none  &none  &out OUT_BLE                &none         &none        &none         &none         &none         &none
+&none   &none &none &none  &none  &out OUT_USB  &none   &none &none         &none        &none         &none         &none         &none 
+                    &none &none    &none    &none       &none &none    &none    &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "bluetooth";
