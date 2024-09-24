@@ -340,11 +340,11 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         osx_1dk_layer {
             bindings = <
-                                                    /*&none*/                                                       &none           &none
-&kp RA(NUBS)   &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
-&none          &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                                &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
-&none          &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none      &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
-                                        &none        &none              &sl OSX_1DKS   &none           &none      &kp OSX_QUOTFR  &none               &none 
+                                                    /*&none*/                                                      &none           &none
+&kp RA(NUBS)   &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                 &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
+&none          &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                               &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
+&none          &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none       &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
+                                        &none        &none              &sl OSX_1DKS   &to OSX_DFT     &to OSX_DFT &kp OSX_QUOTFR  &none               &none 
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk";
