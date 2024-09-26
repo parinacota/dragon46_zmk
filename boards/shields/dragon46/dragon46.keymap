@@ -264,16 +264,16 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&none*/                                             &none           &none
 /* +---------+------------+-----------+-------------+-------------+-----------+                          +-------------+------------+-----------+-----------+-------------+-----------+*/
 /* |  alt+7=•|      â     |     ç     |alt+0156=œ   |      ô      |     °     |                          |             |    µ       |      _    |   ¨(dead) |       û     |           |*/
-    &ax K7    &circ FR_A   &kp FR_CCED &a01xx K5 K6  &circ FR_O    &kp FR_DEG                             &none         &kp FR_MICR  &kp FR_UNDS &kp FR_DIAE &circ FR_U    &none
+    &ax K7    &circ FR_A   &kp FR_CCED &a01xx K5 K6  &circ FR_O    &kp FR_DEG                             &to WIN_DFT   &kp FR_MICR  &kp FR_UNDS &kp FR_DIAE &circ FR_U    &to WIN_DFT  
 /* +---------+------------+-----------+-------------+-------------+-----------+                          +-------------+------------+-----------+-----------+-------------+-----------+*/
 /*           |    à       |  é        |  è          |    ê        |      ñ                               |alt+174 = «  | alt+175 = »|      î    |      ï    |    ù        |    §      |*/
-    &none     &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
+  &to WIN_DFT &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*           |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+0151=— |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
-    &none     &a1xx K4 K5  &none       &a01xx K7 K3  &a01xx K5 K0 &a01xx K5 K1 &none           &none      &a01xx K3 K3  &none        &none       &none       &a01xx K6 K9  &none
+  &to WIN_DFT &a1xx K4 K5 &to WIN_DFT  &a01xx K7 K3  &a01xx K5 K0 &a01xx K5 K1 &to WIN_DFT    &to WIN_DFT &a01xx K3 K3  &to WIN_DFT  &to WIN_DFT &to WIN_DFT &a01xx K6 K9  &to WIN_DFT  
 /* +---------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                                    |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
-                                        &none         &none        &sl WIN_1DKS &none          &none      &a01xx K4 K6  &none        &none 
+                                        &none         &none        &sl WIN_1DKS &none         &to WIN_DFT &a01xx K4 K6  &to WIN_DFT  &none 
 /*                                    +-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+                                      */
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -285,16 +285,16 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&none*/                                                   &none        &none
 // +---------+--------------+-----------+--------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
 // |         |      Â       | alt+128=Ç | alt+0140=Œ   |      Ô       |              |                          |            |            |              |              |       Û        |           |
-    &none     &circ LS(FR_A) &a1xx K2 K8 &a01xx K4 K0  &circ LS(FR_O) &none                                     &none        &none        &none          &none          &circ LS(FR_U)   &none 
+  &to WIN_DFT &circ LS(FR_A) &a1xx K2 K8 &a01xx K4 K0  &circ LS(FR_O)  &to WIN_DFT                               &to WIN_DFT  &to WIN_DFT  &to WIN_DFT    &to WIN_DFT      &circ LS(FR_U) &to WIN_DFT  
 // +---------+--------------+-----------+--------------+--------------+--------------+                          +------------+------------+--------------+--------------+----------------+-----------+
 // |         |alt+183 = À   | alt+144=É | alt+212 = È  |      Ê       |     Ñ        |                          |            |            |      Î       |      Ï       |       Û        |           |
-    &none     &agrv LS(FR_A) &a1xx K4 K4 &agrv LS(FR_E) &circ LS(FR_E) &tild LS(FR_N)                            &none        &none        &circ LS(FR_I) &diae LS(FR_I) &agrv LS(FR_U)   &none 
+  &to WIN_DFT &agrv LS(FR_A) &a1xx K4 K4 &agrv LS(FR_E) &circ LS(FR_E) &tild LS(FR_N)                            &to WIN_DFT  &to WIN_DFT  &circ LS(FR_I) &diae LS(FR_I) &agrv LS(FR_U)   &to WIN_DFT  
 // +---------+--------------+-----------+--------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
 // |         |              |           |              |              |              |          |    |          |            |            |              |              | alt+0174 = (r) |           |
-    &none     &none          &none       &none          &none          &none          &none           &none      &none        &none        &none          &none          &a01xx K7 K4     &none 
+  &to WIN_DFT &to WIN_DFT    &to WIN_DFT &to WIN_DFT    &to WIN_DFT    &to WIN_DFT   &to WIN_DFT     &to WIN_DFT &to WIN_DFT  &to WIN_DFT  &to WIN_DFT    &to WIN_DFT     &a01xx K7 K4    &to WIN_DFT  
 // +---------+--------------+-----------+--------------+--------------+--------------+----------+    +----------+------------+------------+--------------+--------------+----------------+-----------+
 //                                      |              |             |               |          |    |          |            |            |              |                                            
-                                        &none            &none          &none        &none            &none      &none        &none        &none   
+                                        &none            &none          &none        &none           &to WIN_DFT &to WIN_DFT  &to WIN_DFT  &none   
 //                                      +--------------+-------------+---------------+----------+    +----------+------------+------------+--------------+                                                                                      
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -306,7 +306,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&none*/                                         &none       &none
 &x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp FR_EQL  &kp FR_DLR
 &kp FR_DQUO   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp FR_PLUS &kp FR_MINS
-&tild SPACE   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp FR_ASTR &kp FR_SLSH
+&tild SPACE   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &kp PSCRN   &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp FR_ASTR &kp FR_SLSH
                                         &trans      &trans         &trans       &trans      &trans    &kp FR_0    &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
@@ -341,10 +341,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         osx_1dk_layer {
             bindings = <
                                                     /*&none*/                                                      &none           &none
-&kp RA(NUBS)   &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                 &none           &kp LA(FR_M)        &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &none
-&none          &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                               &kp LA(N7)      &kp LS(LA(N7))      &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
-&none          &kp LA(FR_A) &none       &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &none           &none       &kp LA(FR_SCLN) &none               &none          &none         &kp LA(FR_C)  &none
-                                        &none        &none              &sl OSX_1DKS   &to OSX_DFT     &to OSX_DFT &kp OSX_QUOTFR  &none               &none 
+&kp RA(NUBS)  &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                 &to OSX_DFT     &kp LA(FR_M)      &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &to OSX_DFT  
+&to OSX_DFT   &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                               &kp LA(N7)      &kp LS(LA(N7))    &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
+&to OSX_DFT   &kp LA(FR_A) &to OSX_DFT &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &to OSX_DFT     &to OSX_DFT &kp LA(FR_SCLN) &to OSX_DFT       &to OSX_DFT    &to OSX_DFT   &kp LA(FR_C)  &to OSX_DFT  
+                                        &none        &none             &sl OSX_1DKS   &none           &to OSX_DFT &kp OSX_QUOTFR  &to OSX_DFT       &none 
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk";
@@ -352,11 +352,11 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         osx_1dks_layer {
             bindings = <
-                                                /*&none*/                                                       &none       &none
-&none    &circ LS(FR_A)   &kp LA(N9)        &kp LS(LA(FR_O)) &circ LS(FR_O) &none                                   &none       &none        &none          &none          &circ LS(FR_U)   &none 
-&none    &x_agrv LS(FR_A) &x_acut LS(FR_E)  &x_agrv LS(FR_E) &circ LS(FR_E) &x_tild LS(FR_N)                        &none       &none        &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &none 
-&none    &none            &none             &none            &none          &none       &none           &none       &none       &none        &none          &none          &kp LA(FR_R)     &none 
-                                            &none            &none          &none       &none           &none       &none       &none        &none     
+                                                /*&none*/                                                                       &none       &none
+&to OSX_DFT  &circ LS(FR_A)   &kp LA(N9)       &kp LS(LA(FR_O)) &circ LS(FR_O) &to OSX_DFT                                      &to OSX_DFT  &to OSX_DFT  &to OSX_DFT    &to OSX_DFT    &circ LS(FR_U)   &to OSX_DFT  
+&to OSX_DFT  &x_agrv LS(FR_A) &x_acut LS(FR_E) &x_agrv LS(FR_E) &circ LS(FR_E) &x_tild LS(FR_N)                                 &to OSX_DFT  &to OSX_DFT  &circ LS(FR_I) &diae LS(FR_I) &x_agrv LS(FR_U) &to OSX_DFT  
+&to OSX_DFT  &to OSX_DFT      &to OSX_DFT      &to OSX_DFT      &to OSX_DFT    &to OSX_DFT      &to OSX_DFT         &to OSX_DFT &to OSX_DFT  &to OSX_DFT  &to OSX_DFT    &to OSX_DFT    &kp LA(FR_R)     &to OSX_DFT  
+                                               &none            &none          &none            &none               &to OSX_DFT &to OSX_DFT  &to OSX_DFT  &none     
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk S";
