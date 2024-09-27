@@ -175,3 +175,4 @@
 #define OSX_PIPE LS(LA(FR_L))
 #define OSX_QUOTFR LS(LA(N4))
 #define OSX_SECT N6
+#define OSX_PND LS(OSX_GRV)
