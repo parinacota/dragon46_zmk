@@ -350,7 +350,8 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 &kp OSX_AT        &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
 &mt LALT FR_DQUO  &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
                                             &kp LCTRL &kp LGUI &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &kp LALT    
-            >20            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "macOS";
         };
 
