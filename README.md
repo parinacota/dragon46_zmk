@@ -1,7 +1,7 @@
 ZMK configuration for dragon46 keyboard.
 
 ![](dragon46.png)
-![](dragon46_photo.png)
+![](dragon46_photo.jpg)
 
 Not working / still under development
 - implement a reset key? (in addition to the button on the back). Same for a bootloader key?
