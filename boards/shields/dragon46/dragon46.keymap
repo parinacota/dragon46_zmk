@@ -240,6 +240,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
 /* SEQUENCES */
         w1mins2: w1mins2 {
+            compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             wait-ms = <20>; tap-ms = <20>;
             bindings = 
@@ -249,6 +250,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         };
 
         x1mins2: x1mins2 {
+            compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             wait-ms = <20>; tap-ms = <20>;
             bindings = 
