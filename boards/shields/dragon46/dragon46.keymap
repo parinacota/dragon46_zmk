@@ -444,7 +444,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
             bindings = <
                             /*&none*/                                           &bt BT_CLR &trans
 &none   &none     &none     &none      &none        &out OUT_BLE                &none      &none   &none &none &none &none
-&none   &bt_prof0 &bt_prof1 &bbt_prof2 &bt BT_SEL 3 &bt BT_SEL 4                &none      &none   &none &none &none &none
+&none   &bt_prof0 &bt_prof1 &bt_prof2  &bt BT_SEL 3 &bt BT_SEL 4                &none      &none   &none &none &none &none
 &none   &none     &none     &none      &none        &out OUT_USB &none    &none &none      &none   &none &none &none &none 
                             &none      &none        &none        &none    &none &none      &none   &none    
             >;
