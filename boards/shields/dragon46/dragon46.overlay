@@ -119,12 +119,13 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(6,4)   RC(6,5) RC(5,0) RC(5,1
         trigger = <&on_off_key>;
         wakeup-source;
     };
-
+/*
     soft_off_wakers {
         compatible = "zmk,soft-off-wakeup-sources";
         wakeup-sources = <&wakeup_source>;
         status = "okay";
     };
+*/
     
 /* ---------- */
 
