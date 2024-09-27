@@ -230,7 +230,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                 ,<&macro_press &to OSX_DFT>;
         };
 
-         bt_prof1: bt_prof2 {
+        bt_prof2: bt_prof2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
