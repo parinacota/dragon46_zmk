@@ -395,11 +395,11 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         osx_code_layer {
             bindings = <
-                                                        /*&none*/                                              &none       &none
-&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                         &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9  &kp OSX_EQL  &kp FR_DLR
-&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6  &kp OSX_PLUS &kp OSX_MINS
-&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &trans      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3  &kp OSX_ASTR &kp FR_SLSH
-                                            &trans      &trans         &trans        &trans      &trans    &kp FR_0    &trans    &trans    
+                                                        /*&none*/                                                &none       &none
+&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9  &kp OSX_EQL  &kp FR_DLR
+&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6  &kp OSX_PLUS &kp OSX_MINS
+&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &kp LG(FR_4)      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3  &kp OSX_ASTR &kp FR_SLSH
+                                            &trans      &trans         &trans        &trans            &trans    &kp FR_0    &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             display-name = "code";
