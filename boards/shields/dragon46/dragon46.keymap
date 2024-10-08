@@ -20,17 +20,18 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 #define WIN_1DK         2
 #define WIN_1DKS        3
 #define WIN_CODE        4
+#define WIN_NUM         5
 
-#define OSX_DFT         5
-#define OSX_SFT         6
-#define OSX_1DK         7
-#define OSX_1DKS        8
-#define OSX_CODE        9
+#define OSX_DFT         6
+#define OSX_SFT         7
+#define OSX_1DK         8
+#define OSX_1DKS        9
+#define OSX_CODE        10
+#define OSX_NUM         11
 
-#define ALL_NAV         10
-#define ALL_FUNC        11
-#define ALL_SCROLL      12
-#define ALL_BLUETOOTH   13
+#define ALL_FUNC        12
+#define ALL_SCROLL      13
+#define ALL_BLUETOOTH   14
 
 #define K0 KP_N0
 #define K1 KP_N1
@@ -272,7 +273,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 &kp TAB          &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl WIN_1DK  &kp FR_Y     &kp FR_DLR
 &kp FR_AT        &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp FR_EURO
 &mt LALT FR_DQUO &kp FR_Z      &kp FR_X    &kp FR_MINS  &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
-                                        &kp LGUI &kp LCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE         &kp BSPC      &lt ALL_NAV SPACE &kp RET &kp LALT    
+                                        &kp LGUI &kp LCTRL &lm WIN_SFT LSHIFT &mo WIN_CODE         &kp BSPC       &lt WIN_NUM SPACE &kp RET &kp LALT    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "PC";
@@ -334,14 +335,26 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         win_code_layer {
             bindings = <
-                                                        /*&none*/                                         &none       &none
-&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9   &kp FR_EQL  &kp FR_DLR
-&tild SPACE   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6   &kp FR_PLUS &kp FR_MINS
- &kp FR_DQUO  &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &kp PSCRN   &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3   &kp FR_ASTR &kp FR_SLSH
-                                        &trans      &trans         &trans       &trans      &trans    &kp FR_0    &trans    &trans    
+                                                        /*&none*/                                     &none       &none
+&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &none     &none     &none      &none       &none
+&tild SPACE   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp HOME    &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &kp END
+ &kp FR_DQUO  &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &kp PSCRN   &trans    &none       &none     &kp PG_DN &kp PG_UP  &none       &none
+                                        &trans      &trans         &trans       &trans      &trans    &trans      &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             display-name = "code";
+        };
+
+        win_num_layer {
+            bindings = <
+                            /*&none*/                                                           &none       &none
+&soft_off   &none       &none       &kp FR_DOT   &none        &none                             &none       &none       &kp FR_COMM  &none       &none       &none
+&none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7    &kp FR_8     &kp FR_9    &kp FR_0    &none
+&kp LALT    &none       &kp FR_LPRN &kp FR_RPRN  &none        &none     &none        &none      &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
+                                    &trans       &trans       &kp SPACE &mo WIN_CODE &none      &none       &none       &none    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "1 2 3";
         };
 
 // ****************************** APPLE ****************************************
@@ -351,7 +364,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 &kp TAB           &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl OSX_1DK  &kp FR_Y     &kp FR_DLR
 &kp OSX_AT        &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
 &mt LALT FR_DQUO  &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
-                                            &kp LCTRL &kp LGUI &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt ALL_NAV SPACE &kp RET &kp LALT    
+                                            &kp LCTRL &kp LGUI &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt OSX_NAV SPACE &kp RET &kp LALT    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "macOS";
@@ -396,13 +409,25 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         osx_code_layer {
             bindings = <
                                                         /*&none*/                                                &none       &none
-&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &kp SPACE   &kp FR_7  &kp FR_8  &kp FR_9  &kp OSX_EQL  &kp FR_DLR
-&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp FR_DOT  &kp FR_4  &kp FR_5  &kp FR_6  &kp OSX_PLUS &kp OSX_MINS
-&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &kp LG(FR_4)      &trans    &kp FR_COMM &kp FR_1  &kp FR_2  &kp FR_3  &kp OSX_ASTR &kp FR_SLSH
-                                            &trans      &trans         &trans        &trans            &trans    &kp FR_0    &trans    &trans    
+&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &none       &none     &none     &none      &none       &none
+&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp HOME    &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &kp END
+&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &kp LG(FR_4)      &trans    &none       &none     &kp PG_DN &kp PG_UP  &none       &none
+                                            &trans      &trans         &trans        &trans            &trans    &trans      &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             display-name = "code";
+        };
+
+        osx_num_layer {
+            bindings = <
+                            /*&none*/                                                           &none       &none
+&soft_off   &none       &none       &kp FR_DOT   &none        &none                             &none       &none        &kp FR_COMM   &none        &none       &none
+&none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7     &kp FR_8      &kp FR_9     &kp FR_0    &none
+&kp LALT    &none       &kp FR_LPRN &kp FR_RPRN  &none        &none     &none        &none      &kp FR_EQL  &kp OSX_PLUS &kp OSX_MINS  &kp OSX_ASTR &kp FR_SLSH &none 
+                                    &trans       &trans       &kp SPACE &mo OSX_CODE &none      &none       &none        &none    
+            >;
+            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            display-name = "1 2 3";
         };
 
 // ****************************** COMMON ****************************************
@@ -418,25 +443,14 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 //            display-name = "nav";
 //        };
 
-        nav_layer {
-            bindings = <
-                            /*&none*/                                                           &none       &none
-&soft_off   &none       &none       &kp FR_DOT   &none        &none                             &none       &none       &kp FR_COMM  &none       &none       &none
-&none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7    &kp FR_8     &kp FR_9    &kp FR_0    &none
-&kp LALT    &none       &kp FR_LPRN &kp FR_RPRN  &none        &none       &none     &none       &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
-                                    &trans       &trans       &kp LSHFT   &none     &none       &none       &none       &none    
-            >;
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
-            display-name = "123";
-        };
 
         func_layer {
             bindings = <
-                            /*&none*/                                   &none         &none
-&none       &none &none &none  &none  &none                            &kp C_BRI_UP  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&none       &none &none &none  &none  &none                            &kp C_BRI_DN  &kp F4  &kp F5  &kp F6  &none    &kp F12
-&kp LALT    &none &none &none  &none  &none     &none      &kp C_MUTE  &none         &kp F1  &kp F2  &kp F3  &none    &none
-                        &trans &trans &kp LSHFT &none      &none       &none  &none  &none     
+                            /*&none*/                                    &none         &none
+&none       &none &none &none  &none  &none                              &kp C_BRI_UP  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&none       &none &none &none  &none  &none                              &kp C_BRI_DN  &kp F4  &kp F5  &kp F6  &none    &kp F12
+&kp LALT    &none &none &none  &none  &none     &none      &kp C_MUTE    &none         &kp F1  &kp F2  &kp F3  &none    &none
+                        &trans &trans &kp LSHFT &none      &kp LG(F4)    &none  &none  &none     
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             display-name = "func";
@@ -456,11 +470,11 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         bluetooth_layer {
             bindings = <
-                            /*&none*/                                           &bt BT_CLR &trans
-&none   &none     &none     &none      &none        &out OUT_BLE                &none      &none   &none &none &none &none
-&none   &bt_prof0 &bt_prof1 &bt_prof2  &bt BT_SEL 3 &bt BT_SEL 4                &none      &none   &none &none &none &none
-&none   &none     &none     &none      &none        &out OUT_USB &none    &none &none      &none   &none &none &none &none 
-                            &none      &none        &none        &none    &none &none      &none   &none    
+                            /*&none*/                                            &bt BT_CLR &trans
+&none   &none     &none     &none      &none        &out OUT_BLE                 &none      &none   &none &none &none &none
+&none   &bt_prof0 &bt_prof1 &bt_prof2  &bt BT_SEL 3 &bt BT_SEL 4                 &none      &none   &none &none &none &none
+&none   &none     &none     &none      &none        &out OUT_USB &none    &none  &none      &none   &none &none &none &none 
+                            &none      &none        &none        &none    &none  &none      &none   &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "bluetooth";

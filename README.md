@@ -6,7 +6,10 @@ It "emulates" an AZERTY french keyboard, so non-standard keys are injected throu
 ![](dragon46.jpg)
 
 Latest change:
-- soft-on / off throug dedicated GPIO button working, but with an issue: when CONFIG_ZMK_IDLE_SLEEP_TIMEOUT timeout is reached, the button cannot wakeup the keyboard and a reset (small button under the keyboard) is needed to wakeup.
+- soft-on / off. Note that ZMK implements soft-off totally independantly of the sleep.
+  - "oft-off" to be used when travelling, wake up only through this key
+  - and otherwise wake from sleep with any key.
+- move from a numpad to a num row
 
 Not working / still under development
 - mouse move not implemeneted (not fully supported in ZMK)
