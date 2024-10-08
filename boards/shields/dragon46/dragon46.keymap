@@ -406,16 +406,28 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         };
 
 // ****************************** COMMON ****************************************
+//        nav_layer {
+//            bindings = <
+//                            /*&none*/                              &none     &none
+//&soft_off   &none &none &none  &none  &none                       &none    &none    &none     &none     &none     &none
+//&none       &none &none &none  &none  &none                       &kp HOME &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp END
+//&kp LALT    &none &none &none  &none  &none     &none       &none &none    &none    &kp PG_DN &kp PG_UP &none     &none 
+//                        &trans &trans &kp LSHFT &none       &none &none    &none    &none    
+//            >;
+//            sensor-bindings = <&inc_dec_kp UP DOWN>;
+//            display-name = "nav";
+//        };
+
         nav_layer {
             bindings = <
-                            /*&none*/                              &none     &none
-&soft_off   &none &none &none  &none  &none                       &none    &none    &none     &none     &none     &none
-&none       &none &none &none  &none  &none                       &kp HOME &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp END
-&kp LALT    &none &none &none  &none  &none     &none       &none &none    &none    &kp PG_DN &kp PG_UP &none     &none 
-                        &trans &trans &kp LSHFT &none       &none &none    &none    &none    
+                            /*&none*/                                                           &none       &none
+&soft_off   &none       &none       &kp FR_DOT   &none        &none                             &none       &none       &kp FR_COMM  &none       &none       &none
+&none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7    &kp FR_8     &kp FR_9    &kp FR_0    &none
+&kp LALT    &none       &kp FR_LPRN &kp FR_RPRN  &none        &none       &none     &none       &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
+                                    &trans       &trans       &kp LSHFT   &none     &none       &none       &none       &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
-            display-name = "nav";
+            display-name = "123";
         };
 
         func_layer {
