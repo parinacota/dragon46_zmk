@@ -446,11 +446,11 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 
         func_layer {
             bindings = <
-                            /*&none*/                                    &none         &none
-&none       &none &none &none  &none  &none                              &kp C_BRI_UP  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&none       &none &none &none  &none  &none                              &kp C_BRI_DN  &kp F4  &kp F5  &kp F6  &none    &kp F12
-&kp LALT    &none &none &none  &none  &none     &none      &kp C_MUTE    &none         &kp F1  &kp F2  &kp F3  &none    &none
-                        &trans &trans &kp LSHFT &none      &kp LG(F4)    &none  &none  &none     
+                            /*&none*/                                             &none         &none
+&none       &none &none &none  &none  &none                                       &kp C_BRI_UP  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&none       &none &none &none  &none  &none                                       &kp C_BRI_DN  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp LALT    &none &none &none  &none  &none     &none                  &kp C_MUTE &none         &kp F11 &kp F12 &none   &none   &none
+                        &trans &trans &kp LSHFT &kp LCTL(LALT(KC_DEL)) &kp LG(F4) &none  &none  &trans     
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             display-name = "func";
