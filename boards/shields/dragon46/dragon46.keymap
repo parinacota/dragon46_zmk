@@ -272,7 +272,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                 <&macro_tap &kp FR_COLN>,
                 <&macro_tap &kp FR_SLSH>,
                 <&macro_tap &kp FR_SLSH>;
-        }
+        };
 
         
     };
