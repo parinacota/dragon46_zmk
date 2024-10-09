@@ -260,6 +260,20 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                 <&macro_param_2to1>,<&macro_tap &kp MACRO_PLACEHOLDER>;
         };
 
+        https: https {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_tap &kp FR_H>,
+                <&macro_tap &kp FR_T>,
+                <&macro_tap &kp FR_T>,
+                <&macro_tap &kp FR_P>,
+                <&macro_tap &kp FR_S>,
+                <&macro_tap &kp FR_COLN>,
+                <&macro_tap &kp FR_SLSH>,
+                <&macro_tap &kp FR_SLSH>;
+        }
+
         
     };
     
@@ -302,7 +316,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
   &w1mins2 FR_COLN FR_RPRN   &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV   &circ FR_E    &tild FR_N                             &a1xx K7 K4   &a1xx K7 K5  &circ FR_I  &diae FR_I  &kp FR_UGRV   &kp FR_SECT
 /* +------------------------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                          |alt+145 = æ |           |alt+0173=-(d)|alt+0150=–   |alt+0151=— |          |    |          |alt+0133=…   |            |           |            alt+0169=©                */
-  &w1mins2 FR_SCLN FR_RPRN   &a1xx K4 K5 &to WIN_DFT  &a01xx K7 K3  &a01xx K5 K0 &a01xx K5 K1 &to WIN_DFT    &to WIN_DFT &a01xx K3 K3  &to WIN_DFT  &to WIN_DFT &to WIN_DFT &a01xx K6 K9  &to WIN_DFT  
+  &w1mins2 FR_SCLN FR_RPRN   &a1xx K4 K5 &to WIN_DFT  &a01xx K7 K3  &a01xx K5 K0 &a01xx K5 K1 &to WIN_DFT    &to WIN_DFT &a01xx K3 K3  &https       &to WIN_DFT &to WIN_DFT &a01xx K6 K9  &to WIN_DFT  
 /* +------------------------+------------+-----------+-------------+-------------+-----------+----------+    +----------+-------------+------------+-----------+-----------+-------------+-----------+*/
 /*                                                   |             |             |           |          |    |          | alt+0146=’  |            |           |                                      */
                                                         &none         &none     &sl WIN_1DKS &none           &to WIN_DFT &a01xx K4 K6  &to WIN_DFT  &none 
@@ -336,9 +350,9 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_code_layer {
             bindings = <
                                                         /*&none*/                                     &none       &none
-&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &none     &none     &none      &none       &none
-&tild SPACE   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp HOME    &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &kp END
- &kp FR_DQUO  &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &kp PSCRN   &trans    &none       &none     &kp PG_DN &kp PG_UP  &none       &none
+&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &none     &kp FR_DLR &none      &none       &none
+&tild SPACE   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp HOME    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp END
+ &kp FR_DQUO  &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &kp PSCRN   &trans    &none       &none     &kp PG_DN  &kp PG_UP  &none       &none
                                         &trans      &trans         &trans       &trans      &trans    &trans      &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
@@ -387,8 +401,8 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                     /*&none*/                                                      &none           &none
 &kp RA(NUBS)             &circ FR_A   &kp FR_CCED &kp LA(FR_O) &circ FR_O         &kp FR_DEG                                 &to OSX_DFT     &kp LA(FR_M)      &kp LS(FR_EQL) &kp FR_DIAE   &circ FR_U    &to OSX_DFT  
 &x1mins2 FR_COLN FR_RPRN &kp FR_AGRV  &kp FR_EACU &kp FR_EGRV  &circ FR_E         &x_tild FR_N                               &kp LA(N7)      &kp LS(LA(N7))    &circ FR_I     &diae FR_I    &kp FR_UGRV   &kp OSX_SECT
-&x1mins2 FR_SCLN FR_RPRN &kp LA(FR_A) &to OSX_DFT &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &to OSX_DFT     &to OSX_DFT &kp LA(FR_SCLN) &to OSX_DFT       &to OSX_DFT    &to OSX_DFT   &kp LA(FR_C)  &to OSX_DFT  
-                                        &none        &none             &sl OSX_1DKS   &none           &to OSX_DFT &kp OSX_QUOTFR  &to OSX_DFT       &none 
+&x1mins2 FR_SCLN FR_RPRN &kp LA(FR_A) &to OSX_DFT &kp FR_EQL   &kp LS(LA(FR_EQL)) &kp LA(FR_EQL) &to OSX_DFT     &to OSX_DFT &kp LA(FR_SCLN) &https            &to OSX_DFT    &to OSX_DFT   &kp LA(FR_C)  &to OSX_DFT  
+                                        &none        &none             &sl OSX_1DKS   &none      &to OSX_DFT   &kp OSX_QUOTFR &to OSX_DFT    &none 
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1dk";
@@ -409,9 +423,9 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         osx_code_layer {
             bindings = <
                                                         /*&none*/                                                &none       &none
-&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &none       &none     &none     &none      &none       &none
-&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp HOME    &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT   &kp END
-&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &kp LG(FR_4)      &trans    &none       &none     &kp PG_DN &kp PG_UP  &none       &none
+&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &none       &none     &kp FR_DLR &none      &none       &none
+&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp HOME    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp END
+&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &kp LG(FR_4)      &trans    &none       &none     &kp PG_DN  &kp PG_UP  &none       &none
                                             &trans      &trans         &trans        &trans            &trans    &trans      &trans    &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
