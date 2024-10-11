@@ -362,9 +362,9 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_num_layer {
             bindings = <
                             /*&none*/                                                           &none       &none
-&soft_off   &none       &none       &kp FR_DOT   &none        &none                             &none       &none       &kp FR_COMM  &none       &none       &none
+&trans      &none       &none       &kp FR_DOT   &none        &none                             &none       &none       &kp FR_COMM  &none       &none       &kp FR_DLR
 &none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7    &kp FR_8     &kp FR_9    &kp FR_0    &none
-&kp LALT    &none       &kp FR_LPRN &kp FR_RPRN  &none        &none     &none        &none      &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
+&kp LALT    &none       &kp FR_LPRN &kp FR_RPRN  &none        &none     &none        &none      &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &kp FR_BSLS 
                                     &trans       &trans       &kp SPACE &mo WIN_CODE &none      &none       &none       &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -377,7 +377,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                         /*&soft_off*/                                              &to WIN_DFT  &mo ALL_BLUETOOTH
 &kp TAB           &kp FR_Q      &kp FR_C    &kp FR_O     &kp FR_P     &kp FR_W                                     &kp FR_J     &kp FR_M     &kp FR_D     &sl OSX_1DK  &kp FR_Y     &kp FR_DLR
 &kp OSX_AT        &kp FR_A      &kp FR_S    &kp FR_E     &kp FR_N     &kp FR_F                                     &kp FR_L     &kp FR_R     &kp FR_T     &kp FR_I     &kp FR_U     &kp LA(FR_DLR)
-&mt LALT FR_DQUO  &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
+&kp LALT          &kp FR_Z      &kp FR_X    &kp OSX_MINS &kp FR_V     &kp FR_B &lt ALL_FUNC ESC     &mo ALL_SCROLL &kp FR_DOT   &kp FR_H     &kp FR_G     &kp FR_COMM  &kp FR_K     &kp FR_SLSH
                                             &kp LCTRL &kp LGUI &lm OSX_SFT LSHIFT &mo OSX_CODE      &kp BSPC       &lt OSX_NUM SPACE &kp RET &kp LALT    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -423,10 +423,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         osx_code_layer {
             bindings = <
                                                         /*&none*/                                                &none       &none
-&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &none       &none     &kp FR_DLR &none      &none       &none
-&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp HOME    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp END
-&kp FR_DQUO   &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_UNDS   &kp OSX_HASH  &kp LG(FR_4)      &trans    &none       &none     &kp PG_DN  &kp PG_UP  &none       &none
-                                            &trans      &trans         &trans        &trans            &trans    &trans      &trans    &trans    
+&x_agrv SPACE &circ SPACE   &kp OSX_LABK  &kp OSX_RABK  &kp FR_AMPR    &kp FR_PERC                               &none       &kp FR_DLR &kp FR_UNDS &none      &none       &none
+&x_tild SPACE &kp OSX_LCBR  &kp FR_LPRN   &kp FR_RPRN   &kp OSX_RCBR   &kp OSX_PIPE                              &kp HOME    &kp LEFT   &kp DOWN    &kp UP     &kp RIGHT   &kp END
+&none         &kp FR_QUOT   &kp OSX_LBRC  &kp OSX_RBRC  &kp OSX_DQUO   &kp OSX_HASH  &kp LG(FR_4)      &trans    &none       &none      &kp PG_DN   &kp PG_UP  &none       &none
+                                            &trans      &trans         &trans        &trans            &trans    &trans      &trans     &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             display-name = "code";
