@@ -350,7 +350,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_code_layer {
             bindings = <
                                                         /*&none*/                                     &none       &none
-&x_agrv SPACE &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &none     &kp FR_DLR &none      &none       &none
+&agrv SPACE   &circ SPACE  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &none     &kp FR_DLR &none      &none       &none
 &tild SPACE   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp HOME    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT   &kp END
  &kp FR_DQUO  &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &kp PSCRN   &trans    &none       &none     &kp PG_DN  &kp PG_UP  &none       &none
                                         &trans      &trans         &trans       &trans      &trans    &trans      &trans    &trans    
@@ -461,9 +461,9 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         func_layer {
             bindings = <
                             /*&none*/                                      &none         &none
-&none       &none &none &none  &none  &none                                &kp C_BRI_UP  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&none       &none &none &none  &none  &none                                &kp C_BRI_DN  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&kp LALT    &none &none &none  &none  &none     &none           &kp C_MUTE &none         &kp F11 &kp F12 &none   &none   &none
+&none       &none &none &none  &none  &none                                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp C_BRI_UP  
+&none       &none &none &none  &none  &none                                &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp C_BRI_DN  
+&kp LALT    &none &none &none  &none  &none     &none           &kp C_MUTE &kp F11 &kp F12 &none   &none   &none   &none         
                         &trans &trans &kp LSHFT &kp LC(LA(DEL)) &kp LG(F4) &none  &none  &trans     
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
