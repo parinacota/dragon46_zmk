@@ -350,8 +350,8 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_code_layer {
             bindings = <
                                                         /*&none*/                                     &none       &none
-&none   &kp FR_DQUO  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp FR_DLR  &kp FR_EURO &w1mins2 FR_COLN FR_RPRN &w1mins2 FR_SCLN FR_RPRN &w1mins2 FR_COLN FR_LPRN &none
-&none   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &none       &kp LEFT    &kp DOWN    &kp UP     &kp RIGHT   &none
+&none   &kp FR_DQUO  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &kp FR_EURO &w1mins2 FR_COLN FR_RPRN &w1mins2 FR_SCLN FR_RPRN &w1mins2 FR_COLN FR_LPRN &none
+&none   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp FR_DLR  &kp LEFT    &kp DOWN    &kp UP     &kp RIGHT   &none
 &none   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &none       &trans    &kp PSCRN   &kp HOME    &kp PG_DN   &kp PG_UP  &kp END     &none
                                   &trans      &trans         &trans       &trans      &trans    &trans      &trans      &trans    
             >;
