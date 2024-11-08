@@ -10,6 +10,7 @@ It "emulates" an AZERTY french keyboard, so non-standard keys are injected throu
 | ![](doc/dragon46-photo3.jpeg) | ![](doc/dragon46-photo4.jpeg) |
 
 Latest changes:
+- change for a 36 key layout (6th column & 4th thumb --> no action)
 - soft-on / off. Note that ZMK implements soft-off totally independantly of the sleep.
   - "oft-off" to be used when travelling, wake up only through this key
   - and otherwise wake from sleep with any key.
