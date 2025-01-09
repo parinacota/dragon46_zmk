@@ -305,7 +305,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
                                                 /*&none*/                                            &none          &none
 &trans      &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &UnS FR_EXLM &trans      &none
 &none       &trans       &trans     &trans       &trans      &trans                                  &trans         &trans       &trans     &trans       &trans      &none
-&none       &trans       &trans     &UnS FR_QUES &trans      &trans      &trans          &trans      &UnS FR_COLN   &trans       &trans     &UnS FR_SCLN &trans      &none
+&none       &trans       &trans     &UnS FR_QUES &trans      &kp FR_B    &trans          &trans      &UnS FR_COLN   &trans       &trans     &UnS FR_SCLN &kp FR_K    &none
                                     &trans       &trans      &trans      &trans          &UnS DEL    &insec         &trans       &trans    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
@@ -357,10 +357,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_code_layer {
             bindings = <
                                                         /*&none*/                                     &none       &none
-&none   &kp FR_DQUO  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &none       &kp FR_EURO &w1mins2 FR_COLN FR_RPRN &w1mins2 FR_SCLN FR_RPRN &w1mins2 FR_COLN FR_LPRN &none
-&none   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp FR_DLR  &kp LEFT    &kp DOWN    &kp UP     &kp RIGHT   &none
-&none   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &none       &trans    &kp PSCRN   &kp HOME    &kp PG_DN   &kp PG_UP  &kp END     &none
-                                  &trans      &trans      &trans       &trans      &trans    &trans      &trans      &trans    
+&none   &kp FR_DQUO  &kp FR_LABK  &kp FR_RABK  &kp FR_AMPR   &kp FR_PERC                        &kp FR_DLR  &kp FR_EURO &w1mins2 FR_COLN FR_RPRN &w1mins2 FR_SCLN FR_RPRN &w1mins2 FR_COLN FR_LPRN &none
+&none   &kp FR_LCBR  &kp FR_LPRN  &kp FR_RPRN  &kp FR_RCBR   &kp FR_PIPE                        &kp LEFT    &kp DOWN    &kp UP     &kp RIGHT   &none       &none
+&none   &kp FR_QUOT  &kp FR_LBRC  &kp FR_RBRC  &kp FR_UNDS   &kp FR_HASH  &none       &trans    &kp HOME    &kp PG_DN   &kp PG_UP  &kp END     &none       &none
+                                     &trans      &trans      &trans       &trans      &trans    &kp LSHIFT  &trans  &trans    
             >;
             sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
             display-name = "code";
@@ -369,10 +369,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         win_num_layer {
             bindings = <
                             /*&none*/                                                           &none       &none
-&none       &kp TAB     &kp FR_AT   &kp FR_DOT   &tild SPACE  &kp ESC                           &none       &kp SPACE   &kp FR_COMM  &none       &kp FR_BSLS &none
+&none       &kp TAB     &kp FR_AT   &kp SPACE    &tild SPACE  &kp ESC                           &none       &kp FR_DOT  &kp FR_COMM  &none       &kp FR_BSLS &none
 &none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7    &kp FR_8     &kp FR_9    &kp FR_0    &none
-&none       &none       &kp FR_LPRN &kp FR_RPRN  &circ SPACE  &agrv SPACE &none        &none    &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
-                                    &trans       &trans       &trans      &mo WIN_CODE &none    &none       &none       &none    
+&none       &kp LA(TAB) &kp FR_LPRN &kp FR_RPRN  &circ SPACE  &agrv SPACE &none        &none    &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
+                                    &trans       &trans       &kw LSHIFT  &mo WIN_CODE &none    &none       &none       &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1 2 3";
@@ -468,10 +468,10 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
         func_layer {
             bindings = <
                             /*&none*/                                      &none         &none
-&none       &none &none &none  &kp C_BRI_UP &kp C_VOL_UP                          &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &none  
-&none       &none &none &none  &kp C_BRI_DN &kp C_VOL_DN                          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &none 
-&none       &none &none &none  &none        &none         &none        &kp C_MUTE &kp F11 &kp F12 &none   &none   &none   &none         
-                                &trans &trans &kp LSHFT &kp LC(LA(DEL)) &kp LG(F4) &none  &none   &trans     
+&none       &sys_reset  &none &none  &kp C_BRI_UP &kp C_VOL_UP                          &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &none  
+&none       &bootloader &none &none  &kp C_BRI_DN &kp C_VOL_DN                          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &none 
+&none       &none       &none &none  &none        &none         &none        &kp C_MUTE &kp F11 &kp F12 &none   &none   &none   &none         
+                                &trans &trans &kp LSHFT &kp LC(LA(DEL))      &kp C_MUTE &kp LG(F4)  &none   &trans     
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             display-name = "func";
