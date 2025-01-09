@@ -372,7 +372,7 @@ west build -b nice_nano_v2 -- -DSHIELD="dragon46 nice_view_adapter nice_view"
 &none       &kp TAB     &kp FR_AT   &kp SPACE    &tild SPACE  &kp ESC                           &none       &kp FR_DOT  &kp FR_COMM  &none       &kp FR_BSLS &none
 &none       &kp FR_1    &kp FR_2    &kp FR_3     &kp FR_4     &kp FR_5                          &kp FR_6    &kp FR_7    &kp FR_8     &kp FR_9    &kp FR_0    &none
 &none       &kp LA(TAB) &kp FR_LPRN &kp FR_RPRN  &circ SPACE  &agrv SPACE &none        &none    &kp FR_EQL  &kp FR_PLUS &kp FR_MINS  &kp FR_ASTR &kp FR_SLSH &none 
-                                    &trans       &trans       &kw LSHIFT  &mo WIN_CODE &none    &none       &none       &none    
+                                    &trans       &trans       &kp LSHIFT  &mo WIN_CODE &none    &none       &none       &none    
             >;
             sensor-bindings = <&inc_dec_kp UP DOWN>;
             display-name = "1 2 3";
